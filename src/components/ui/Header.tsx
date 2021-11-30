@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         >
           <LinkStyled header>The Weeknd Generator</LinkStyled>
         </Link>
-        <div className='flex items-center ml-0 md:ml-10'>
+        <div className='flex items-center ml-2 md:ml-10'>
           <Link
             href='https://github.com/zispidd/theweeknd'
             passHref

@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+// eslint-disable-next-line @next/next/no-script-in-document
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -32,7 +34,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script
+          <Script
             async
             src='https://www.googletagmanager.com/gtag/js?id=G-4L16XPF4GD'
           />
