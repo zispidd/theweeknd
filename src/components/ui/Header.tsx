@@ -27,13 +27,13 @@ const Header: React.FC = () => {
         </Link>
         <div className='flex items-center ml-0 md:ml-10'>
           <Link
-            href='/'
+            href='https://github.com/zispidd/theweeknd'
             passHref
           >
             <LinkStyled>github</LinkStyled>
           </Link>
           <Link
-            href='/'
+            href='https://discify.bio'
             passHref
           >
             <LinkStyled 
