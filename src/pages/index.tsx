@@ -62,8 +62,9 @@ export default function Home() {
     image.src = '/bg.png'
 
     image.onload = async () => {
-      const f = new FontFace('Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap')
-      await f.load().catch(() => {})
+      const f = new FontFace('Roboto', 'url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2)')
+      const font = await f.load()
+      document.fonts.add(font)
       setReady(true)
       setImage(image)
     }
@@ -93,7 +94,6 @@ export default function Home() {
 
   const downloadCanvas = () => {
     setIsOpen(true)
-    return
     var link = document.createElement('a')
 
     link.download = 'theweeknd-hob-cover.png'
@@ -110,7 +110,7 @@ export default function Home() {
   return (
     <Layout>
       {ready && (
-        <WrapperStyled className='flex'>
+        <WrapperStyled className='flex flex-col lg:flex-row mb-5 md:mb-0'>
           <Canvas
             ref={ref}
             width={1920}
@@ -136,7 +136,7 @@ export default function Home() {
             cover={cover}
             style={{ display: 'none' }}
           />
-          <div className='ml-5 flex flex-col justify-center w-full'>
+          <div className='ml-0 md:ml-5 flex flex-col justify-center w-full'>
             <Input
               type='text'
               value={title}
@@ -168,7 +168,7 @@ export default function Home() {
               value=''
               onChange={handleChange}
               name='cover'
-              placeholder='Choose an cover'
+              placeholder='Choose a cover'
             />
             <div className='mt-5'>
               <Button
@@ -180,6 +180,7 @@ export default function Home() {
           </div>
           <ModalComponent
             open={modalIsOpen}
+            onClose={closeModal}
           />
         </WrapperStyled>
       )}
