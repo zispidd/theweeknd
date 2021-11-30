@@ -160,7 +160,7 @@ export default function Home() {
               name='description'
               placeholder='Song list'
               textarea
-              max={161}
+              max={199}
             />
             <Input
               type='file'
