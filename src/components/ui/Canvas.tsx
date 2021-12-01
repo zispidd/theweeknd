@@ -22,21 +22,21 @@ const Canvas = React.forwardRef<HTMLCanvasElement, IProps>(({ resolution, width,
     const ctx = refObject.current.getContext('2d')
 
     ctx.drawImage(image, 0, 0, 1920 / resolution, 1920 / resolution)
-    ctx.font = `bold ${210 / resolution}px Roboto`
+    ctx.font = `bold ${210 / resolution}px Helvetica`
     ctx.fillStyle = '#292526'
 
     ctx.fillText(title, 60 / resolution, 230 / resolution)
 
-    ctx.font = `bold ${113 / resolution}px Roboto`
+    ctx.font = `bold ${113 / resolution}px Helvetica`
 
     ctx.fillText(name, 785 / resolution, 388 / resolution)
 
-    ctx.font = `bold ${14 / resolution}px Roboto`
+    ctx.font = `bold ${14 / resolution}px Helvetica`
 
     const width = ctx.measureText(name).width
     ctx.fillText(name, (1851 / resolution) - width, 1850 / resolution)
 
-    ctx.font = `bold ${33 / (resolution)}px Roboto`
+    ctx.font = `bold ${33 / (resolution)}px Helvetica`
     printAtWordWrap(ctx, description.toUpperCase(), 70 / resolution, 455 / resolution, 33 / resolution, 1734 / resolution)
 
     if (cover) {

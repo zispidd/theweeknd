@@ -62,7 +62,7 @@ export default function Home() {
     image.src = '/bg.png'
 
     image.onload = async () => {
-      const f = new FontFace('Roboto', 'url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2)')
+      const f = new FontFace('Helvetica', 'url(/Helvetica.woff2)')
       const font = await f.load()
       document.fonts.add(font)
       setReady(true)
